@@ -87,7 +87,7 @@ function generateNextBlock(blockData) {
     const merkleRoot = merkleTree.root() || '0'.repeat(64);
 
     const newBlockHeader = new BlockHeader(currentVersion, nextIndex, previousHash, nextTimestamp, merkleRoot);
-    return newBlockHeader(newBlockHeader, blockData);
+    return new Block(newBlockHeader, blockData);
 }
 // (코드 시작부로) const fs = require("fs");
 function getCurrentVersion() {
@@ -103,14 +103,14 @@ function getCurrentTimestamp() {
 // newBlock.data.length === 0: 검증할 새 블록에 data가 없을 경우 '0'.repeat(64) 값이 검증 블록에 접힌 값이어야 한다.
 function isValidNewBlock(newBlock, previousBlock) {
     if (!isValidBlockStructure(newBlock)) {
-        console.log('invalid block structure: %s', JSON.stringify(newblock));
+        console.log('invalid block structure: %s', JSON.stringify(newBlock));
         return false;
     }
     else if (previousBlock.header.index + 1 !== newBlock.header.index) {
         console.log("Invalid index");
         return false;
     }
-    else if (calculatedHashForBlock(previousBlock) !== newBlock.header.previousHash) {
+    else if (calculateHashForBlock(previousBlock) !== newBlock.header.previousHash) {
         console.log("Invalid previousHash");
         return false;
     }
