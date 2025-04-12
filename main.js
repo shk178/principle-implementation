@@ -2,9 +2,22 @@
 // $ git config --global user.name "shk178"
 // $ git config --global user.email "hknn55t@gmail.com"
 // $ git config --global core.autocrlf true
-// ### git clone 후 remote 확인
-// $ cd principle-implementation
-// $ git remote show origin
+// ### vsc to repos
+// 클론
+// git remote rename origin azure
+// 작성
+// $ git checkout -b chapter-2-dev
+// 저장, $ git add ., $ git status
+// $ git commit -m "chapter 2, pages 43-71"
+// $ git push -u azure chapter-2-dev
+// ### vcs to github
+// $ git remote add github https://github.com/shk178/principle-implementation.git
+// $ git checkout chapter-2-dev
+// $ git pull
+// $ git checkout -b chapter-2
+// 저장, $ git add ., $ git status
+// $ git commit -m "Add chapter-2 code"
+// $ git push -u github chapter-2
 // ### 1.11 기본값으로 package.json 파일 생성
 // $ npm init -y
 // "index.js" (-->) "main.js"
