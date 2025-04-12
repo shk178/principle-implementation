@@ -12,8 +12,8 @@
 // $ git push -u azure chapter-2-dev
 // ### vcs to github
 // $ git remote add github https://github.com/shk178/principle-implementation.git
+// $ git pull github
 // $ git checkout chapter-2-dev
-// $ git pull
 // $ git checkout -b chapter-2
 // 저장, $ git add ., $ git status
 // $ git commit -m "Add chapter-2 code"
