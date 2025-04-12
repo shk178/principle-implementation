@@ -13,11 +13,14 @@
 // ### vcs to github
 // $ git remote add github https://github.com/shk178/principle-implementation.git
 // $ git pull github
-// $ git checkout chapter-2-dev
+// $ git checkout -b main github/main
 // $ git checkout -b chapter-2
 // 저장, $ git add ., $ git status
 // $ git commit -m "Add chapter-2 code"
 // $ git push -u github chapter-2
+// $ git checkout main
+// $ git merge main chapter-2
+// $ git push github main
 // ### 1.11 기본값으로 package.json 파일 생성
 // $ npm init -y
 // "index.js" (-->) "main.js"
